@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111329"/><stop offset="1" stop-color="#352750"/></linearGradient>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#242044"/><stop offset="1" stop-color="#663565"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="75" r="190" fill="#8676e7" opacity=".1"/>
+  <text x="76" y="116" fill="#ffd764" font-family="Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="3">KOSTENLOSES BROWSER-JUMP’N’RUN</text>
+  <text x="70" y="220" fill="#f7f6ff" font-family="Arial,sans-serif" font-size="78" font-weight="900" letter-spacing="-4">Poké-Mario</text>
+  <text x="76" y="288" fill="#ffd764" font-family="Arial,sans-serif" font-size="39" font-weight="700">Pokémon Jump’n’Run</text>
+  <text x="76" y="345" fill="#d0cde7" font-family="Arial,sans-serif" font-size="28">8 Level · Pokémon fangen · direkt im Browser spielen</text>
+  <rect x="74" y="405" width="366" height="68" rx="15" fill="#ffd764"/>
+  <text x="108" y="450" fill="#211a37" font-family="Arial,sans-serif" font-size="27" font-weight="800">Jetzt kostenlos spielen</text>
+  <rect x="645" y="105" width="500" height="395" rx="20" fill="#161832" stroke="#b3a9ff" stroke-opacity=".6" stroke-width="3"/>
+  <rect x="660" y="120" width="470" height="360" rx="12" fill="url(#sky)"/>
+  <g fill="#fff2bc" opacity=".75"><circle cx="720" cy="157" r="3"/><circle cx="825" cy="190" r="3"/><circle cx="935" cy="150" r="3"/><circle cx="1080" cy="175" r="3"/></g>
+  <path d="M680 320V235h70v85zm120 0v-98h92v98zm220 0v-112h80v112z" fill="#17152e" opacity=".75"/>
+  <path d="M692 273v-52l34-31 34 31v52m328 0v-72l34-32 34 32v72" fill="#332341" stroke="#d28b88" stroke-width="5"/>
+  <path d="M686 354h188v18H686zm222-48h130v17H908zm-130 48h212v18H778z" fill="#e1a75a" stroke="#804952" stroke-width="6"/>
+  <path d="M660 400h470v80H660z" fill="#281b35"/><path d="M660 400h470" stroke="#ffca75" stroke-width="6"/>
+  <g transform="translate(850 265)"><path d="M0 25Q0 3 18 0l-2-21 16 13q19-5 28 12l16-12-4 23q13 17 7 41H12z" fill="#ffe257" stroke="#4b2f45" stroke-width="5"/><path d="M5 1v-20l15 12m38 4 13-16-1 25" fill="#44304a" stroke="#4b2f45" stroke-width="4"/><circle cx="20" cy="30" r="5" fill="#f35d6e"/><circle cx="68" cy="30" r="5" fill="#f35d6e"/><path d="m77 52 24-5-11-10 27-13-7 16 12-2-30 24 3-15-18 8" fill="#ffd54a" stroke="#4b2f45" stroke-width="4" stroke-linejoin="round"/></g>
+  <g transform="translate(1035 328)"><path d="M0 8q7-20 17-5 11-16 18 0 22 7 14 34-5 20-28 20T-7 37Q-12 20 0 8" fill="#f28a3c" stroke="#542a50" stroke-width="4"/><path d="M8 25h6m14 0h6" stroke="#311e37" stroke-width="4"/></g>
+  <text x="687" y="452" fill="#ffe08a" font-family="monospace" font-size="19" font-weight="700">LEVEL 1-7 · GURKENBURG</text>
+</svg>

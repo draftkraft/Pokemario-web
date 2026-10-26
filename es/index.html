@@ -92,6 +92,12 @@
     .faq-list p { margin: 0; }
     .notice { padding: 16px 18px; border-left: 3px solid #a99bff; border-radius: 0 10px 10px 0; background: #ffffff08; font-size: .91rem; }
     .site-footer { padding: 28px 0 36px; border-top: 1px solid #ffffff18; color: #9b99b6; font-size: .84rem; }
+    .analytics-consent { position: fixed; z-index: 20; inset: auto 16px 16px; max-width: 760px; margin-inline: auto; padding: 18px; border: 1px solid #ffffff35; border-radius: 14px; background: #17172bf5; box-shadow: 0 12px 40px #0009; color: #f3f1ff; }
+    .analytics-consent p { margin: 0 0 12px; }
+    .analytics-consent-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .analytics-consent button, .analytics-settings { padding: 9px 14px; border: 1px solid #ffffff55; border-radius: 8px; background: #292842; color: inherit; font: inherit; cursor: pointer; }
+    .analytics-consent button:first-child { background: #ffe071; border-color: #ffe071; color: #211b37; font-weight: 700; }
+    .analytics-settings { margin-top: 10px; padding: 4px 8px; font-size: inherit; }
     #loading { min-height: 1.5em; margin-top: 14px; color: #d8d6ea; }
     noscript { display: block; margin-top: 16px; color: #ffc4b8; }
     body.playing { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: safe center; padding: 8px 0; background: #1a1a2e; }
@@ -202,7 +208,11 @@
       <p class="notice" data-i18n="web.fan">Poké-Mario es un proyecto gratuito y no comercial de fans, sin relación con Nintendo, Game Freak ni The Pokémon Company. Pokémon y sus nombres relacionados son marcas de sus respectivos propietarios.</p>
     </section>
   </main>
-  <footer class="site-footer"><nav class="shell language-links" aria-label="Idioma" data-i18n-aria="ui.language"><a href="../en/" hreflang="en" lang="en" data-language="en">English</a> <a href="../es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="../de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="../ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="../fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell" data-i18n="web.footer">Poké-Mario · Plataformas gratuito de fans · Partidas guardadas en tu navegador.</div></footer>
-  <script src="../assets/site.8232db8c66da7de4.js" defer></script>
+  <footer class="site-footer"><nav class="shell language-links" aria-label="Idioma" data-i18n-aria="ui.language"><a href="../en/" hreflang="en" lang="en" data-language="en">English</a> <a href="../es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="../de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="../ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="../fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell" data-i18n="web.footer">Poké-Mario · Plataformas gratuito de fans · Partidas guardadas en tu navegador.</div><div class="shell"><button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Configuración de analíticas</button></div></footer>
+  <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
+    <p id="analytics-consent-title" data-i18n="web.analyticsConsent">¿Podemos usar Google Analytics para medir las visitas y entender cómo se usa Poké-Mario? Se envían datos a Google. Las analíticas solo se activan si las aceptas.</p>
+    <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Aceptar analíticas</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Rechazar</button></div>
+  </aside>
+  <script src="../assets/site.1bae958633d51a50.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const CACHE = 'pokemario-web-v1';
+const CACHE = 'pokemario-web-v3-languages';
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.add('./')).then(() => self.skipWaiting()));
 });
@@ -14,13 +14,18 @@ self.addEventListener('fetch', event => {
       const cached = await cache.match(request);
       if (cached) return cached;
       const response = await fetch(request);
-      if (response.ok) cache.put(request, response.clone());
+      if (response.ok) event.waitUntil(cache.put(request, response.clone()).catch(() => {}));
       return response;
     }));
   } else if (request.mode === 'navigate') {
     event.respondWith(fetch(request).then(response => {
-      if (response.ok) caches.open(CACHE).then(cache => cache.put('./', response.clone()));
+      if (response.ok) {
+        // Clone before returning: the browser may consume the original while
+        // caches.open is pending. Each locale keeps its own offline response.
+        const copy = response.clone();
+        event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => {}));
+      }
       return response;
-    }).catch(async () => (await caches.match('./')) || Response.error()));
+    }).catch(async () => (await caches.match(request)) || Response.error()));
   }
 });

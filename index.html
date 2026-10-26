@@ -1,57 +1,37 @@
 <!doctype html>
-<html lang="de">
+<html lang="en" data-locale="">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
-  <meta name="description" content="Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung.">
+  <title>Poké-Mario – Free Pokémon Platformer Browser Game</title>
+  <meta name="description" content="Play Poké-Mario free in your browser: explore eight platforming levels, catch Pokémon and fight turn-based battles. No download or online account needed.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://pokemario.com/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="https://pokemario.com/en/">
+  <link rel="alternate" hreflang="es" href="https://pokemario.com/es/">
+  <link rel="alternate" hreflang="de" href="https://pokemario.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://pokemario.com/ja/">
+  <link rel="alternate" hreflang="fr" href="https://pokemario.com/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://pokemario.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Poké-Mario">
-  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://pokemario.com/">
-  <meta property="og:title" content="Poké-Mario – Pokémon Jump’n’Run kostenlos im Browser">
-  <meta property="og:description" content="Acht Jump’n’Run-Level, fangbare Pokémon und rundenbasierte Kämpfe. Kostenlos direkt im Browser spielen.">
-  <meta property="og:image" content="https://pokemario.com/og-image.svg">
-  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:title" content="Poké-Mario – Free Pokémon Platformer Browser Game">
+  <meta property="og:description" content="Play Poké-Mario free in your browser: explore eight platforming levels, catch Pokémon and fight turn-based battles. No download or online account needed.">
+  <meta property="og:image" content="https://pokemario.com/og-en.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Poké-Mario: Pixel-Abenteuer mit Pokémon in der Gurkenburg">
+  <meta property="og:image:alt" content="Animated preview of level 1-7, Cucumber Castle">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Poké-Mario – kostenloses Pokémon Jump’n’Run">
-  <meta name="twitter:description" content="Springen, Pokémon fangen und kämpfen: acht Level direkt im Browser spielen.">
-  <meta name="twitter:image" content="https://pokemario.com/og-image.svg">
-  <meta name="twitter:image:alt" content="Poké-Mario: Pixel-Abenteuer mit Pokémon in der Gurkenburg">
-  <title>Poké-Mario – kostenloses Pokémon Jump’n’Run im Browser</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://pokemario.com/#website",
-        "url": "https://pokemario.com/",
-        "name": "Poké-Mario",
-        "inLanguage": "de",
-        "description": "Ein kostenloses Pokémon-inspiriertes Jump’n’Run-Browsergame mit acht Leveln und rundenbasierten Kämpfen."
-      },
-      {
-        "@type": "VideoGame",
-        "@id": "https://pokemario.com/#game",
-        "name": "Poké-Mario",
-        "url": "https://pokemario.com/",
-        "description": "Kostenloses, inoffizielles Jump’n’Run-Fanprojekt im Browser: durch acht Level springen, Pokémon fangen und rundenbasierte Kämpfe bestreiten.",
-        "genre": ["Jump’n’Run", "Platform game", "Adventure game"],
-        "gamePlatform": "Webbrowser",
-        "playMode": "SinglePlayer",
-        "inLanguage": "de",
-        "isAccessibleForFree": true
-      }
-    ]
-  }
-  </script>
+  <meta name="twitter:title" content="Poké-Mario – Free Pokémon Platformer Browser Game">
+  <meta name="twitter:description" content="Play Poké-Mario free in your browser: explore eight platforming levels, catch Pokémon and fight turn-based battles. No download or online account needed.">
+  <meta name="twitter:image" content="https://pokemario.com/og-en.png">
+  <meta name="twitter:image:alt" content="Animated preview of level 1-7, Cucumber Castle">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://pokemario.com/#website","name":"Poké-Mario","url":"https://pokemario.com/","inLanguage":"en","description":"Play Poké-Mario free in your browser: explore eight platforming levels, catch Pokémon and fight turn-based battles. No download or online account needed."},{"@type":"VideoGame","@id":"https://pokemario.com/#game","name":"Poké-Mario","url":"https://pokemario.com/","inLanguage":"en","description":"Play Poké-Mario free in your browser: explore eight platforming levels, catch Pokémon and fight turn-based battles. No download or online account needed.","genre":["Platform game","Adventure game"],"gamePlatform":"Web browser","playMode":"SinglePlayer","isAccessibleForFree":true}]}</script>
   <style>
     :root { color-scheme: dark; --ink: #f7f6ff; --muted: #c3c3db; --gold: #ffd764; --violet: #a99bff; --panel: #1b1c39; }
     * { box-sizing: border-box; }
@@ -60,6 +40,13 @@
     a { color: inherit; }
     .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
     .site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ffffff18; }
+    .site-header { flex-wrap: wrap; padding-block: 14px; gap: 14px; }
+    .language-control { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
+    select { font: inherit; padding: 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); }
+    select:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .language-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 14px; }
+    html[lang="ja"] h1 { max-width: none; font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
+    html[lang="ja"] .eyebrow { letter-spacing: .05em; }
     .wordmark { color: var(--gold); font-size: 1.35rem; font-weight: 900; letter-spacing: -.04em; text-decoration: none; }
     .header-link { color: var(--muted); font-size: .95rem; text-decoration-thickness: 1px; text-underline-offset: 4px; }
     .hero { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(28px, 5vw, 68px); padding-block: clamp(38px, 6vw, 68px) 62px; }
@@ -113,36 +100,39 @@
     kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
     .game-loading { padding: 24px; color: #c8d2f0; }
     @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
-    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
+    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .header-link { font-size: .8rem; } .language-control { margin-left: auto; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
   <header class="site-header shell">
-    <a class="wordmark" href="./" aria-label="Poké-Mario Startseite">Poké-Mario</a>
-    <a class="header-link" href="#spielinfo">Spielinfos &amp; Steuerung</a>
+    <a class="wordmark" href="./" data-home aria-label="Poké-Mario home" data-i18n-aria="web.home">Poké-Mario</a>
+    <a class="header-link" href="#spielinfo" data-i18n="web.nav">About &amp; controls</a>
+    <label class="language-control"><span id="language-label" data-i18n="ui.language">Language</span>
+      <select id="language" aria-labelledby="language-label"><option value="en" selected>English</option><option value="es">Español</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="fr">Français</option></select>
+    </label>
   </header>
   <main id="start-screen">
     <section class="hero shell" aria-labelledby="page-title">
       <div class="hero-copy">
-        <p class="eyebrow">Poké-Mario · Kostenloses Browser-Jump’n’Run</p>
-        <h1 id="page-title">Pokémon <span>Jump’n’Run</span> kostenlos spielen</h1>
-        <p>Springe durch acht handgebaute Pixel-Level, triff wilde Pokémon und fang sie nach rundenbasierten Kämpfen. Poké-Mario ist ein kostenloses Fanprojekt, das direkt im Browser startet – ohne Download und ohne Anmeldung.</p>
+        <p class="eyebrow" data-i18n="web.eyebrow">Poké-Mario · Free browser platformer</p>
+        <h1 id="page-title" data-i18n="web.heading">A free Pokémon <span>platforming adventure</span></h1>
+        <p data-i18n="web.intro">Jump through eight handcrafted pixel levels, meet wild Pokémon and catch them in turn-based battles. Poké-Mario is a free fan project that starts right in your browser, with no download or online account.</p>
         <div class="hero-actions">
-          <button class="play-button" id="start" type="button"><span aria-hidden="true">▶</span> Jetzt kostenlos spielen</button>
-          <span class="play-note">Zwei Schwierigkeitsgrade · Spielstand im Browser</span>
+          <button class="play-button" id="start" type="button" data-i18n="web.play"><span aria-hidden="true">▶</span> Play free now</button>
+          <span class="play-note" data-i18n="web.note">Two difficulties · Saved in your browser</span>
         </div>
         <div id="loading" role="status" aria-live="polite"></div>
-        <ul class="feature-pills" aria-label="Spielmerkmale">
-          <li>8 Level</li><li>Pokémon fangen</li><li>Retro-Pixelgrafik</li><li>Kein Download</li>
+        <ul class="feature-pills" aria-label="Game features" data-i18n-aria="web.features">
+          <li data-i18n="web.levels">8 levels</li><li data-i18n="web.catch">Catch Pokémon</li><li data-i18n="web.pixel">Retro pixel art</li><li data-i18n="web.download">No download</li>
         </ul>
-        <noscript>Zum Spielen JavaScript aktivieren. Die Spielinfos auf dieser Seite bleiben auch ohne JavaScript verfügbar.</noscript>
+        <noscript data-i18n="web.noscript">Enable JavaScript to play. You can still read the game information without it.</noscript>
       </div>
       <figure class="preview" aria-labelledby="preview-label">
-        <div class="preview-top"><span id="preview-label">POKÉ-MARIO · WELT 1-7</span><span class="live-dot">GAMEPLAY-VORSCHAU</span></div>
+        <div class="preview-top"><span id="preview-label" data-i18n="web.world">POKÉ-MARIO · WORLD 1-7</span><span class="live-dot" data-i18n="web.preview">GAMEPLAY PREVIEW</span></div>
         <svg class="game-scene" viewBox="0 0 800 440" role="img" aria-labelledby="scene-title scene-desc">
-          <title id="scene-title">Animierte Gameplay-Vorschau aus Level 1-7, Gurkenburg</title>
-          <desc id="scene-desc">Ein Pikachu springt zwischen schwebenden Plattformen durch eine dunkle Pixelburg. Eine Gurke fliegt an einem Kürbisgegner vorbei.</desc>
+          <title id="scene-title" data-i18n="web.sceneTitle">Animated preview of level 1-7, Cucumber Castle</title>
+          <desc id="scene-desc" data-i18n="web.sceneDesc">Pikachu jumps between floating platforms in a dark pixel castle. A cucumber flies past a pumpkin enemy.</desc>
           <defs>
             <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#242044"/><stop offset="1" stop-color="#663565"/></linearGradient>
             <linearGradient id="lava" x2="0" y2="1"><stop stop-color="#ff9b52"/><stop offset="1" stop-color="#ff4f72"/></linearGradient>
@@ -176,79 +166,40 @@
             </g>
           </g>
           <g class="spark" fill="#fff2a8"><path d="M261 161l6 12 13 2-10 8 2 13-11-7-11 7 3-13-10-8 13-2z"/><path d="M455 177l4 8 9 1-7 6 2 8-8-4-7 4 2-8-7-6 9-1z"/></g>
-          <g transform="translate(20 16)"><rect width="170" height="33" rx="7" fill="#14152c" fill-opacity=".86" stroke="#ffffff35"/><text x="14" y="22" fill="#e7e2ff" font-family="monospace" font-size="13" font-weight="700">❤❤❤  PUNKTE  07350</text></g>
+          <g transform="translate(20 16)"><rect width="170" height="33" rx="7" fill="#14152c" fill-opacity=".86" stroke="#ffffff35"/><text x="14" y="22" fill="#e7e2ff" font-family="monospace" font-size="13" font-weight="700" data-i18n="web.score">❤❤❤  SCORE  07350</text></g>
         </svg>
-        <figcaption class="scene-caption"><strong>Level 1-7 · Gurkenburg</strong><span>Springen · sammeln · kämpfen</span></figcaption>
+        <figcaption class="scene-caption"><strong data-i18n="web.castle">Level 1-7 · Cucumber Castle</strong><span data-i18n="web.actions">Jump · collect · battle</span></figcaption>
       </figure>
     </section>
 
     <section class="content-section shell" id="spielinfo" aria-labelledby="about-title">
-      <p class="eyebrow">Das erwartet dich</p>
-      <h2 id="about-title">Ein Pokémon-Browsergame mit Jump’n’Run-Levels</h2>
-      <p>Poké-Mario verbindet klassisches Plattformspiel mit Pokémon-Sammeln: Erkunde acht unterschiedliche Level, weiche Hindernissen aus und begegne wilden Pokémon. Schwäche sie im rundenbasierten Kampf und versuche, sie mit einem Pokéball zu fangen. Wähle zwischen zwei Schwierigkeitsgraden und setze deine Reise später mit dem lokal gespeicherten Spielstand fort.</p>
+      <p class="eyebrow" data-i18n="web.aboutEyebrow">Your next adventure</p>
+      <h2 id="about-title" data-i18n="web.aboutTitle">A Pokémon browser game with platforming levels</h2>
+      <p data-i18n="web.about">Poké-Mario combines classic platforming with Pokémon collecting. Explore eight different levels, dodge obstacles and encounter wild Pokémon. Weaken them in turn-based battles, then try catching them with a Poké Ball. Choose one of two difficulties and continue later using a profile saved in your browser.</p>
       <div class="feature-grid">
-        <article class="feature-card"><h3>Acht abwechslungsreiche Level</h3><p>Von der Wiese über Wolken, Dschungel und Gurkenburg bis zum Kunstmuseum – jedes Gebiet bringt eigene Hindernisse und Geheimnisse.</p></article>
-        <article class="feature-card"><h3>Fangen statt nur vorbeispringen</h3><p>Wilde Pokémon starten rundenbasierte Kämpfe. Wähle dein Team, setze passende Attacken ein und wirf Pokébälle.</p></article>
-        <article class="feature-card"><h3>Sofort im Browser spielen</h3><p>Kein Installer und kein Konto nötig. Die Fortschritte werden lokal in deinem Browser gespeichert; zwei Schwierigkeitsgrade stehen bereit.</p></article>
+        <article class="feature-card"><h3 data-i18n="web.feature1Title">Eight varied levels</h3><p data-i18n="web.feature1">From meadows and clouds to the jungle, Cucumber Castle and the art museum, each area has its own obstacles and secrets.</p></article>
+        <article class="feature-card"><h3 data-i18n="web.feature2Title">Catch and build your team</h3><p data-i18n="web.feature2">Wild Pokémon trigger turn-based battles. Pick your team, choose effective moves and throw Poké Balls.</p></article>
+        <article class="feature-card"><h3 data-i18n="web.feature3Title">Play instantly in your browser</h3><p data-i18n="web.feature3">No installer or online account needed. Progress is saved locally in your browser, with two difficulty settings to choose from.</p></article>
       </div>
     </section>
 
     <section class="content-section shell" aria-labelledby="controls-title">
-      <p class="eyebrow">Schnell erklärt</p>
-      <h2 id="controls-title">Steuerung und häufige Fragen</h2>
+      <p class="eyebrow" data-i18n="web.controlsEyebrow">Quick start</p>
+      <h2 id="controls-title" data-i18n="web.controlsTitle">Controls and frequently asked questions</h2>
       <div class="faq-list">
-        <article><h3>Wie kann ich Poké-Mario spielen?</h3><p>Klicke auf „Jetzt kostenlos spielen“. Das Spiel lädt im Browser. Nutze ← und → zum Laufen, Leertaste oder ↑ zum Springen und X, um einen Pokéball zu werfen und einen Kampf zu beginnen.</p></article>
-        <article><h3>Ist Poké-Mario kostenlos und brauche ich einen Download?</h3><p>Ja. Poké-Mario ist kostenlos und läuft direkt im modernen Webbrowser. Du brauchst weder Download noch Anmeldung.</p></article>
-        <article><h3>Was ist Level 1-7 Gurkenburg?</h3><p>Gurkenburg ist das siebte Level. Dort führen Plattformen durch eine dunkle Burg. Sammle Gurken und wirf sie mit G, um Kürbisse aus dem Weg zu räumen.</p></article>
-        <article><h3>Wird mein Fortschritt gespeichert?</h3><p>Der Spielstand wird lokal in deinem Browser abgelegt. Er wird nicht zwischen verschiedenen Geräten synchronisiert.</p></article>
+        <article><h3 data-i18n="web.q1">How do I play Poké-Mario?</h3><p data-i18n="web.a1">Click “Play free now” to load the game. Use a keyboard: ← and → to move, Space or ↑ to jump, and X to throw a Poké Ball and start a battle.</p></article>
+        <article><h3 data-i18n="web.q2">Is Poké-Mario free? Do I need a download?</h3><p data-i18n="web.a2">Yes. Poké-Mario is free and runs in a modern web browser. No download or online registration is required.</p></article>
+        <article><h3 data-i18n="web.q3">What is level 1-7, Cucumber Castle?</h3><p data-i18n="web.a3">Cucumber Castle is the seventh level. Platforms lead through a dark castle. Collect cucumbers and throw them with G to clear pumpkins from your path.</p></article>
+        <article><h3 data-i18n="web.q4">Is my progress saved?</h3><p data-i18n="web.a4">Your profile is stored locally in your browser. It does not sync between devices. Clearing browser data also removes local saves.</p></article>
       </div>
     </section>
 
     <section class="content-section shell" aria-labelledby="fan-title">
-      <h2 id="fan-title">Ein inoffizielles Fanprojekt</h2>
-      <p class="notice">Poké-Mario ist ein kostenloses, nicht-kommerzielles Fanprojekt und steht in keiner Verbindung zu Nintendo, Game Freak oder The Pokémon Company. Pokémon und zugehörige Namen sind Marken ihrer jeweiligen Rechteinhaber.</p>
+      <h2 id="fan-title" data-i18n="web.fanTitle">An unofficial fan project</h2>
+      <p class="notice" data-i18n="web.fan">Poké-Mario is a free, non-commercial fan project, unaffiliated with Nintendo, Game Freak or The Pokémon Company. Pokémon and related names are trademarks of their respective owners.</p>
     </section>
   </main>
-  <footer class="site-footer"><div class="shell">Poké-Mario · Kostenloses Jump’n’Run-Fanprojekt · Spielstände bleiben in deinem Browser.</div></footer>
-  <script>
-    (() => {
-      const button = document.getElementById('start');
-      const status = document.getElementById('loading');
-      button.addEventListener('click', async () => {
-        button.disabled = true;
-        status.textContent = 'Spiel wird geladen …';
-        const screen = document.getElementById('start-screen');
-        document.body.classList.add('playing');
-        const game = document.createElement('main');
-        game.id = 'game-screen';
-        game.innerHTML = '<div class="game-loading" role="status">Spiel wird geladen …</div>';
-        screen.replaceWith(game);
-        const css = document.createElement('link');
-        css.rel = 'stylesheet';
-        css.href = './assets/game.95a15eee1a586a16.css';
-        document.head.append(css);
-        game.insertAdjacentHTML('beforeend', '<canvas id="game" width="800" height="480" aria-label="Poké-Mario-Spiel"></canvas><div id="hint"><kbd>←</kbd> <kbd>→</kbd> laufen &nbsp; <kbd>Space</kbd>/<kbd>↑</kbd> springen &nbsp; <kbd>X</kbd> Pokéball werfen &nbsp; <kbd>1</kbd>–<kbd>6</kbd> Team wählen &nbsp; <kbd>↓</kbd> Tür/Rohr betreten<br>Im Kampf: <kbd>Pfeile</kbd> Menü &nbsp; <kbd>Space</kbd>/<kbd>Enter</kbd> bestätigen &nbsp; <kbd>Esc</kbd> zurück</div>');
-        try {
-          await new Promise((resolve, reject) => {
-            css.onload = resolve;
-            css.onerror = () => reject(new Error('Das Spiel-Layout konnte nicht geladen werden.'));
-          });
-          const script = document.createElement('script');
-          script.src = './assets/game.639ec47e884af177.js';
-          script.defer = true;
-          await new Promise((resolve, reject) => {
-            script.onload = resolve;
-            script.onerror = () => reject(new Error('Das Spiel konnte nicht geladen werden.'));
-            document.body.append(script);
-          });
-          game.querySelector('.game-loading')?.remove();
-          if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
-        } catch (error) {
-          game.innerHTML = `<p role="alert">${error.message} Bitte Seite neu laden und erneut versuchen.</p>`;
-        }
-      }, { once: true });
-      if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}), { once: true });
-    })();
-  </script>
+  <footer class="site-footer"><nav class="shell language-links" aria-label="Language" data-i18n-aria="ui.language"><a href="./en/" hreflang="en" lang="en" data-language="en">English</a> <a href="./es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="./de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="./ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="./fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell" data-i18n="web.footer">Poké-Mario · Free fan-made platformer · Saves stay in your browser.</div></footer>
+  <script src="./assets/site.3fcfd1cf88b8b7b5.js" defer></script>
 </body>
 </html>

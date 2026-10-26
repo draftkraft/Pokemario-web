@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de" data-locale="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111329">
+  <title>Poké-Mario – kostenloses Pokémon Jump’n’Run im Browser</title>
+  <meta name="description" content="Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://pokemario.com/de/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="https://pokemario.com/en/">
+  <link rel="alternate" hreflang="es" href="https://pokemario.com/es/">
+  <link rel="alternate" hreflang="de" href="https://pokemario.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://pokemario.com/ja/">
+  <link rel="alternate" hreflang="fr" href="https://pokemario.com/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://pokemario.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Poké-Mario">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://pokemario.com/de/">
+  <meta property="og:title" content="Poké-Mario – kostenloses Pokémon Jump’n’Run im Browser">
+  <meta property="og:description" content="Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung.">
+  <meta property="og:image" content="https://pokemario.com/og-de.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Animierte Gameplay-Vorschau aus Level 1-7, Gurkenburg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Poké-Mario – kostenloses Pokémon Jump’n’Run im Browser">
+  <meta name="twitter:description" content="Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung.">
+  <meta name="twitter:image" content="https://pokemario.com/og-de.png">
+  <meta name="twitter:image:alt" content="Animierte Gameplay-Vorschau aus Level 1-7, Gurkenburg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://pokemario.com/#website","name":"Poké-Mario","url":"https://pokemario.com/de/","inLanguage":"de","description":"Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung."},{"@type":"VideoGame","@id":"https://pokemario.com/de/#game","name":"Poké-Mario","url":"https://pokemario.com/de/","inLanguage":"de","description":"Poké-Mario kostenlos im Browser spielen: Springe durch acht Jump’n’Run-Level, fange Pokémon und bestreite rundenbasierte Kämpfe. Ohne Download oder Anmeldung.","genre":["Platform game","Adventure game"],"gamePlatform":"Web browser","playMode":"SinglePlayer","isAccessibleForFree":true}]}</script>
+  <style>
+    :root { color-scheme: dark; --ink: #f7f6ff; --muted: #c3c3db; --gold: #ffd764; --violet: #a99bff; --panel: #1b1c39; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { min-width: 320px; min-height: 100vh; margin: 0; background: radial-gradient(ellipse at 82% 10%, #292255 0, #111329 44rem); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ffffff18; }
+    .site-header { flex-wrap: wrap; padding-block: 14px; gap: 14px; }
+    .language-control { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
+    select { font: inherit; padding: 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); }
+    select:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .language-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 14px; }
+    html[lang="ja"] h1 { max-width: none; font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
+    html[lang="ja"] .eyebrow { letter-spacing: .05em; }
+    .wordmark { color: var(--gold); font-size: 1.35rem; font-weight: 900; letter-spacing: -.04em; text-decoration: none; }
+    .header-link { color: var(--muted); font-size: .95rem; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .hero { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(28px, 5vw, 68px); padding-block: clamp(38px, 6vw, 68px) 62px; }
+    .eyebrow { margin: 0 0 16px; color: var(--violet); font-size: .78rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 14ch; margin: 0; font-size: clamp(2.55rem, 5vw, 4rem); line-height: 1.03; letter-spacing: -.065em; }
+    h1 span { color: var(--gold); }
+    .hero-copy > p:not(.eyebrow) { max-width: 56ch; margin: 22px 0 0; color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.13rem); }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
+    .play-button { min-height: 56px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border: 2px solid #ffe995; border-radius: 12px; background: linear-gradient(180deg, #ffe78e, #ffc642); color: #211a37; font: 850 1.08rem system-ui, sans-serif; text-decoration: none; cursor: pointer; box-shadow: 0 5px 0 #a75e25, 0 12px 28px #ffcf4b2e; transition: transform .15s ease, filter .15s ease; }
+    .play-button:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .play-button:active { transform: translateY(2px); box-shadow: 0 2px 0 #a75e25; }
+    .play-button:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    .play-note { color: #a6a4c3; font-size: .88rem; }
+    .feature-pills { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .feature-pills li { padding: 5px 10px; border: 1px solid #ffffff20; border-radius: 999px; background: #ffffff08; color: #ddd9f8; font-size: .82rem; }
+    .preview { overflow: hidden; border: 1px solid #b3a9ff45; border-radius: 20px; background: #161832; box-shadow: 0 28px 80px #05061180, 0 0 0 8px #ffffff06; }
+    .preview-top { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 0 17px; border-bottom: 1px solid #ffffff14; color: #d9d5f2; font: 700 .75rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; }
+    .live-dot { display: inline-flex; align-items: center; gap: 8px; color: #bdeccb; letter-spacing: .04em; }
+    .live-dot::before { width: 7px; height: 7px; border-radius: 50%; background: #67e59c; content: ""; box-shadow: 0 0 12px #67e59c; }
+    .game-scene { display: block; width: 100%; height: auto; background: #251738; image-rendering: pixelated; }
+    .hero-jump { translate: 0 0; animation: jump-arc 2.4s ease-in-out infinite; }
+    .enemy { translate: 0 0; animation: enemy-bob 1.15s ease-in-out infinite; }
+    .cucumber { translate: 0 0; animation: cucumber-flight 2.4s cubic-bezier(.2,.65,.8,.35) infinite; }
+    .question-block { translate: 0 0; animation: block-bop 2.8s ease-in-out infinite; }
+    .spark { transform-box: fill-box; transform-origin: center; animation: twinkle 1.5s ease-in-out infinite alternate; }
+    @keyframes jump-arc { 0%, 100% { translate: 0 0; } 42%, 58% { translate: 36px -42px; } }
+    @keyframes enemy-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+    @keyframes cucumber-flight { 0% { translate: 0 0; opacity: 0; } 10% { opacity: 1; } 68% { translate: 125px 28px; opacity: 1; } 82%, 100% { translate: 125px 28px; opacity: 0; } }
+    @keyframes block-bop { 0%, 82%, 100% { translate: 0 0; } 88% { translate: 0 -7px; } 94% { translate: 0 0; } }
+    @keyframes twinkle { from { opacity: .45; scale: .82; } to { opacity: 1; scale: 1.12; } }
+    .scene-caption { display: flex; justify-content: space-between; gap: 16px; padding: 12px 17px; color: #aaa8c6; font-size: .78rem; }
+    .scene-caption strong { color: #ffe08a; font-weight: 750; }
+    .content-section { padding: 42px 0 48px; border-top: 1px solid #ffffff18; }
+    .content-section h2 { margin: 0 0 15px; font-size: clamp(1.65rem, 3vw, 2.25rem); letter-spacing: -.04em; line-height: 1.18; }
+    .content-section p { max-width: 78ch; margin: 0 0 15px; color: var(--muted); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 25px; }
+    .feature-card { min-height: 144px; padding: 19px; border: 1px solid #ffffff19; border-radius: 14px; background: linear-gradient(145deg, #ffffff0d, #ffffff04); }
+    .feature-card h3 { margin: 0 0 8px; color: #f4dca0; font-size: 1.02rem; }
+    .feature-card p { margin: 0; font-size: .94rem; }
+    .faq-list { display: grid; gap: 18px; margin-top: 22px; }
+    .faq-list h3 { margin: 0 0 5px; font-size: 1.04rem; }
+    .faq-list p { margin: 0; }
+    .notice { padding: 16px 18px; border-left: 3px solid #a99bff; border-radius: 0 10px 10px 0; background: #ffffff08; font-size: .91rem; }
+    .site-footer { padding: 28px 0 36px; border-top: 1px solid #ffffff18; color: #9b99b6; font-size: .84rem; }
+    #loading { min-height: 1.5em; margin-top: 14px; color: #d8d6ea; }
+    noscript { display: block; margin-top: 16px; color: #ffc4b8; }
+    body.playing { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: safe center; padding: 8px 0; background: #1a1a2e; }
+    #game-screen { width: 100%; text-align: center; }
+    #game-screen canvas { display: block; width: 800px; max-width: 100vw; height: auto; aspect-ratio: 800 / 480; margin: 0 auto; border: 4px solid #222; background: #5c94fc; box-shadow: 0 0 30px #0009; }
+    #hint { margin-top: 10px; padding: 0 8px; color: #ccc; font: 13px/1.8 "Courier New", monospace; }
+    kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
+    .game-loading { padding: 24px; color: #c8d2f0; }
+    @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
+    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .header-link { font-size: .8rem; } .language-control { margin-left: auto; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="wordmark" href="../" data-home aria-label="Poké-Mario Startseite" data-i18n-aria="web.home">Poké-Mario</a>
+    <a class="header-link" href="#spielinfo" data-i18n="web.nav">Spielinfos &amp; Steuerung</a>
+    <label class="language-control"><span id="language-label" data-i18n="ui.language">Sprache</span>
+      <select id="language" aria-labelledby="language-label"><option value="en">English</option><option value="es">Español</option><option value="de" selected>Deutsch</option><option value="ja">日本語</option><option value="fr">Français</option></select>
+    </label>
+  </header>
+  <main id="start-screen">
+    <section class="hero shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="web.eyebrow">Poké-Mario · Kostenloses Browser-Jump’n’Run</p>
+        <h1 id="page-title" data-i18n="web.heading">Pokémon <span>Jump’n’Run</span> kostenlos spielen</h1>
+        <p data-i18n="web.intro">Springe durch acht handgebaute Pixel-Level, triff wilde Pokémon und fang sie nach rundenbasierten Kämpfen. Poké-Mario ist ein kostenloses Fanprojekt, das direkt im Browser startet – ohne Download und ohne Anmeldung.</p>
+        <div class="hero-actions">
+          <button class="play-button" id="start" type="button" data-i18n="web.play"><span aria-hidden="true">▶</span> Jetzt kostenlos spielen</button>
+          <span class="play-note" data-i18n="web.note">Zwei Schwierigkeitsgrade · Spielstand im Browser</span>
+        </div>
+        <div id="loading" role="status" aria-live="polite"></div>
+        <ul class="feature-pills" aria-label="Spielmerkmale" data-i18n-aria="web.features">
+          <li data-i18n="web.levels">8 Level</li><li data-i18n="web.catch">Pokémon fangen</li><li data-i18n="web.pixel">Retro-Pixelgrafik</li><li data-i18n="web.download">Kein Download</li>
+        </ul>
+        <noscript data-i18n="web.noscript">Zum Spielen JavaScript aktivieren. Die Spielinfos auf dieser Seite bleiben auch ohne JavaScript verfügbar.</noscript>
+      </div>
+      <figure class="preview" aria-labelledby="preview-label">
+        <div class="preview-top"><span id="preview-label" data-i18n="web.world">POKÉ-MARIO · WELT 1-7</span><span class="live-dot" data-i18n="web.preview">GAMEPLAY-VORSCHAU</span></div>
+        <svg class="game-scene" viewBox="0 0 800 440" role="img" aria-labelledby="scene-title scene-desc">
+          <title id="scene-title" data-i18n="web.sceneTitle">Animierte Gameplay-Vorschau aus Level 1-7, Gurkenburg</title>
+          <desc id="scene-desc" data-i18n="web.sceneDesc">Ein Pikachu springt zwischen schwebenden Plattformen durch eine dunkle Pixelburg. Eine Gurke fliegt an einem Kürbisgegner vorbei.</desc>
+          <defs>
+            <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#242044"/><stop offset="1" stop-color="#663565"/></linearGradient>
+            <linearGradient id="lava" x2="0" y2="1"><stop stop-color="#ff9b52"/><stop offset="1" stop-color="#ff4f72"/></linearGradient>
+            <pattern id="brick" width="48" height="30" patternUnits="userSpaceOnUse"><path d="M0 0H48M0 15H48M24 0V15M8 15V30M40 15V30" fill="none" stroke="#95708e" stroke-opacity=".38" stroke-width="2"/></pattern>
+          </defs>
+          <rect width="800" height="440" fill="url(#sky)"/>
+          <g fill="#fff2bc" opacity=".72"><path d="M66 55h4v4h-4zM158 103h4v4h-4zM276 45h4v4h-4zM520 82h4v4h-4zM695 48h4v4h-4zM750 133h4v4h-4zM409 111h4v4h-4z"/></g>
+          <circle cx="690" cy="112" r="38" fill="#ffdd93" opacity=".9"/><circle cx="706" cy="101" r="38" fill="#33254a"/>
+          <g fill="#17152e" opacity=".64"><path d="M0 245V140h87v25h38v80H0zm99 0V181h75v64zm464 0v-81h58v-43h113v124zm-80 0v-60h51v60z"/><path d="M20 140h26v-40h45v40h24v-80h72v80h31v105H20zm590 105v-138h39V70h66v37h42v138z"/></g>
+          <g fill="#332341" stroke="#d28b88" stroke-width="3"><path d="M35 210V99l46-43 46 43v126H35z"/><path d="M646 218V82l49-48 49 48v145h-98z"/><path d="M84 106h-9V76h20v30zm594-13h-9V60h20v33z"/></g>
+          <g fill="#17152e"><path d="M65 194h25v31H65zm40 0h25v31h-25zM676 185h25v34h-25zm40 0h25v34h-25z"/><path d="M381 198v-49h42v49zM552 153v-37h40v37z"/></g>
+          <g class="platform platform-left"><path d="M34 286h224v19H34z" fill="#e1a75a"/><path d="M34 305h224v10H34z" fill="#804952"/><path d="M42 286v29m28-29v29m28-29v29m28-29v29m28-29v29m28-29v29m28-29v29" stroke="#452b48" stroke-width="4"/></g>
+          <g class="platform platform-mid"><path d="M322 246h151v17H322z" fill="#dfaa63"/><path d="M322 263h151v10H322z" fill="#804952"/><path d="M331 246v27m30-27v27m30-27v27m30-27v27m30-27v27" stroke="#452b48" stroke-width="4"/></g>
+          <g class="platform platform-right"><path d="M536 287h221v19H536z" fill="#e1a75a"/><path d="M536 306h221v10H536z" fill="#804952"/><path d="M546 287v29m30-29v29m30-29v29m30-29v29m30-29v29m30-29v29m30-29v29" stroke="#452b48" stroke-width="4"/></g>
+          <g class="question-block"><rect x="287" y="181" width="37" height="38" rx="3" fill="#ffcf54" stroke="#fff0a2" stroke-width="4"/><text x="305" y="210" text-anchor="middle" font-family="monospace" font-weight="900" font-size="27" fill="#875129">?</text></g>
+          <g class="question-block" style="animation-delay:-1.2s"><rect x="492" y="207" width="37" height="38" rx="3" fill="#ffcf54" stroke="#fff0a2" stroke-width="4"/><text x="510" y="236" text-anchor="middle" font-family="monospace" font-weight="900" font-size="27" fill="#875129">?</text></g>
+          <path d="M0 372h800v68H0z" fill="#281b35"/><path d="M0 372h800v68H0z" fill="url(#brick)"/><path d="M0 372h800" stroke="#ffca75" stroke-width="6"/>
+          <path d="M0 399h800" stroke="url(#lava)" stroke-width="8" opacity=".9"/>
+          <g class="enemy" transform="translate(600 259)"><path d="M0 8q7-20 17-5 11-16 18 0 22 7 14 34-5 20-28 20T-7 37Q-12 20 0 8" fill="#f28a3c" stroke="#542a50" stroke-width="4"/><path d="M3 7l2-15 11 13m13-3 10-13 2 22" fill="#6b4c7e" stroke="#542a50" stroke-width="4"/><path d="M8 25h6m14 0h6M20 29v7" stroke="#311e37" stroke-width="4"/><path d="M13 39q8 7 16 0" fill="none" stroke="#7e253d" stroke-width="3"/></g>
+          <g class="cucumber" transform="translate(555 230) rotate(-23)"><rect width="42" height="13" rx="7" fill="#83cc66" stroke="#315e54" stroke-width="3"/><path d="M10 4v5m11-6v7m11-6v5" stroke="#d4ee94" stroke-width="2"/></g>
+          <g class="hero-jump" transform="translate(188 204)">
+            <ellipse cx="24" cy="79" rx="22" ry="6" fill="#17152e" opacity=".45"/>
+            <g class="hero-runner">
+              <path d="M3 38Q1 20 9 12l-4-16 13 10q8-4 16 0L47-4l-3 18q8 11 7 27l-3 17H9z" fill="#ffe257" stroke="#4b2f45" stroke-width="4"/>
+              <path d="M6 7l-1-11 10 8m23 2 9-10-2 15" fill="#44304a" stroke="#4b2f45" stroke-width="3"/>
+              <path d="M12 29h5m19 0h5" stroke="#39283f" stroke-width="4"/>
+              <circle cx="10" cy="40" r="6" fill="#f35d6e"/><circle cx="43" cy="40" r="6" fill="#f35d6e"/>
+              <path d="M21 48q6 5 12 0" fill="none" stroke="#784057" stroke-width="3"/>
+              <path d="M46 59l17-4-8-8 20-10-5 12 11-2-22 19 4-12-15 7" fill="#ffd54a" stroke="#4b2f45" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M13 64l-4 8m30-8 5 8" stroke="#4b2f45" stroke-width="5" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g class="spark" fill="#fff2a8"><path d="M261 161l6 12 13 2-10 8 2 13-11-7-11 7 3-13-10-8 13-2z"/><path d="M455 177l4 8 9 1-7 6 2 8-8-4-7 4 2-8-7-6 9-1z"/></g>
+          <g transform="translate(20 16)"><rect width="170" height="33" rx="7" fill="#14152c" fill-opacity=".86" stroke="#ffffff35"/><text x="14" y="22" fill="#e7e2ff" font-family="monospace" font-size="13" font-weight="700" data-i18n="web.score">❤❤❤  PUNKTE  07350</text></g>
+        </svg>
+        <figcaption class="scene-caption"><strong data-i18n="web.castle">Level 1-7 · Gurkenburg</strong><span data-i18n="web.actions">Springen · sammeln · kämpfen</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="content-section shell" id="spielinfo" aria-labelledby="about-title">
+      <p class="eyebrow" data-i18n="web.aboutEyebrow">Das erwartet dich</p>
+      <h2 id="about-title" data-i18n="web.aboutTitle">Ein Pokémon-Browsergame mit Jump’n’Run-Levels</h2>
+      <p data-i18n="web.about">Poké-Mario verbindet klassisches Plattformspiel mit Pokémon-Sammeln: Erkunde acht unterschiedliche Level, weiche Hindernissen aus und begegne wilden Pokémon. Schwäche sie im rundenbasierten Kampf und versuche, sie mit einem Pokéball zu fangen. Wähle zwischen zwei Schwierigkeitsgraden und setze deine Reise später mit dem lokal gespeicherten Spielstand fort.</p>
+      <div class="feature-grid">
+        <article class="feature-card"><h3 data-i18n="web.feature1Title">Acht abwechslungsreiche Level</h3><p data-i18n="web.feature1">Von der Wiese über Wolken, Dschungel und Gurkenburg bis zum Kunstmuseum – jedes Gebiet bringt eigene Hindernisse und Geheimnisse.</p></article>
+        <article class="feature-card"><h3 data-i18n="web.feature2Title">Fangen statt nur vorbeispringen</h3><p data-i18n="web.feature2">Wilde Pokémon starten rundenbasierte Kämpfe. Wähle dein Team, setze passende Attacken ein und wirf Pokébälle.</p></article>
+        <article class="feature-card"><h3 data-i18n="web.feature3Title">Sofort im Browser spielen</h3><p data-i18n="web.feature3">Kein Installer und kein Konto nötig. Die Fortschritte werden lokal in deinem Browser gespeichert; zwei Schwierigkeitsgrade stehen bereit.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="controls-title">
+      <p class="eyebrow" data-i18n="web.controlsEyebrow">Schnell erklärt</p>
+      <h2 id="controls-title" data-i18n="web.controlsTitle">Steuerung und häufige Fragen</h2>
+      <div class="faq-list">
+        <article><h3 data-i18n="web.q1">Wie kann ich Poké-Mario spielen?</h3><p data-i18n="web.a1">Klicke auf „Jetzt kostenlos spielen“. Das Spiel lädt im Browser. Nutze ← und → zum Laufen, Leertaste oder ↑ zum Springen und X, um einen Pokéball zu werfen und einen Kampf zu beginnen.</p></article>
+        <article><h3 data-i18n="web.q2">Ist Poké-Mario kostenlos und brauche ich einen Download?</h3><p data-i18n="web.a2">Ja. Poké-Mario ist kostenlos und läuft direkt im modernen Webbrowser. Du brauchst weder Download noch Anmeldung.</p></article>
+        <article><h3 data-i18n="web.q3">Was ist Level 1-7 Gurkenburg?</h3><p data-i18n="web.a3">Gurkenburg ist das siebte Level. Dort führen Plattformen durch eine dunkle Burg. Sammle Gurken und wirf sie mit G, um Kürbisse aus dem Weg zu räumen.</p></article>
+        <article><h3 data-i18n="web.q4">Wird mein Fortschritt gespeichert?</h3><p data-i18n="web.a4">Der Spielstand wird lokal in deinem Browser abgelegt. Er wird nicht zwischen verschiedenen Geräten synchronisiert.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="fan-title">
+      <h2 id="fan-title" data-i18n="web.fanTitle">Ein inoffizielles Fanprojekt</h2>
+      <p class="notice" data-i18n="web.fan">Poké-Mario ist ein kostenloses, nicht-kommerzielles Fanprojekt und steht in keiner Verbindung zu Nintendo, Game Freak oder The Pokémon Company. Pokémon und zugehörige Namen sind Marken ihrer jeweiligen Rechteinhaber.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><nav class="shell language-links" aria-label="Sprache" data-i18n-aria="ui.language"><a href="../en/" hreflang="en" lang="en" data-language="en">English</a> <a href="../es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="../de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="../ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="../fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell" data-i18n="web.footer">Poké-Mario · Kostenloses Jump’n’Run-Fanprojekt · Spielstände bleiben in deinem Browser.</div></footer>
+  <script src="../assets/site.3fcfd1cf88b8b7b5.js" defer></script>
+</body>
+</html>

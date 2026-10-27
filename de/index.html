@@ -42,7 +42,7 @@
     .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
     .site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ffffff18; }
     .site-header { flex-wrap: wrap; padding-block: 14px; gap: 14px; }
-    .language-control { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
+    .language-control { display: flex; align-items: center; gap: 8px; margin-left: auto; font-size: .85rem; }
     select { font: inherit; padding: 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); }
     select:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .language-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 14px; }
@@ -97,7 +97,9 @@
     .analytics-consent-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .analytics-consent button, .analytics-settings { padding: 9px 14px; border: 1px solid #ffffff55; border-radius: 8px; background: #292842; color: inherit; font: inherit; cursor: pointer; }
     .analytics-consent button:first-child { background: #ffe071; border-color: #ffe071; color: #211b37; font-weight: 700; }
-    .analytics-settings { margin-top: 10px; padding: 4px 8px; font-size: inherit; }
+    .analytics-settings { margin-top: 10px; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: start; }
+    .analytics-settings:hover { text-decoration: underline; }
+    .analytics-settings:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
     #loading { min-height: 1.5em; margin-top: 14px; color: #d8d6ea; }
     noscript { display: block; margin-top: 16px; color: #ffc4b8; }
     body.playing { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: safe center; padding: 8px 0; background: #1a1a2e; }
@@ -115,6 +117,22 @@
     .auth-avatar { border-radius: 50%; }
     .auth-name { color: var(--muted); }
     .auth-signout { font-size: .75rem; padding: 4px 8px; }
+    #auth-area { position: relative; }
+    .auth-panel { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: 280px; padding: 16px; border: 1px solid #ffffff30; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; }
+    .auth-google-btn { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 14px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #292842; font: inherit; font-size: .85rem; cursor: pointer; }
+    .auth-google-btn:hover { border-color: var(--gold); }
+    .auth-divider { display: flex; align-items: center; gap: 10px; margin: 12px 0; color: var(--muted); font-size: .78rem; }
+    .auth-divider::before, .auth-divider::after { content: ''; flex: 1; border-top: 1px solid #ffffff20; }
+    .auth-field { margin-bottom: 8px; }
+    .auth-field input { width: 100%; padding: 8px 10px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #0e0f22; font: inherit; font-size: .88rem; }
+    .auth-field input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
+    .auth-field input::placeholder { color: #7d789b; }
+    .auth-error { margin-bottom: 8px; padding: 6px 8px; border-radius: 6px; background: #3d1525; color: #ffa4a4; font-size: .8rem; }
+    .auth-submit { width: 100%; padding: 9px; border: 1px solid var(--gold); border-radius: 8px; background: linear-gradient(180deg, #ffe78e, #ffc642); color: #211a37; font: inherit; font-size: .88rem; font-weight: 700; cursor: pointer; }
+    .auth-submit:hover { filter: brightness(1.06); }
+    .auth-submit:disabled { opacity: .6; cursor: default; }
+    .auth-toggle { display: block; width: 100%; margin-top: 8px; padding: 0; border: 0; background: none; color: var(--violet); font: inherit; font-size: .8rem; cursor: pointer; text-align: center; }
+    .auth-toggle:hover { text-decoration: underline; }
   </style>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
@@ -123,11 +141,10 @@
 <body>
   <header class="site-header shell">
     <a class="wordmark" href="../" data-home aria-label="Poké-Mario Startseite" data-i18n-aria="web.home">Poké-Mario</a>
-    <a class="header-link" href="#spielinfo" data-i18n="web.nav">Spielinfos &amp; Steuerung</a>
-    <div id="auth-area"></div>
     <label class="language-control"><span id="language-label" data-i18n="ui.language">Sprache</span>
       <select id="language" aria-labelledby="language-label"><option value="en">English</option><option value="es">Español</option><option value="de" selected>Deutsch</option><option value="ja">日本語</option><option value="fr">Français</option></select>
     </label>
+    <div id="auth-area"></div>
   </header>
   <main id="start-screen">
     <section class="hero shell" aria-labelledby="page-title">
@@ -223,6 +240,6 @@
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Dürfen wir Google Analytics verwenden, um Besuche zu messen und zu verstehen, wie Poké-Mario genutzt wird? Dabei werden Daten an Google gesendet. Die Analyse wird erst nach deiner Zustimmung aktiviert.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Zustimmen</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Ablehnen</button></div>
   </aside>
-  <script src="../assets/site.c185ec4a7dc115df.js" defer></script>
+  <script src="../assets/site.3e7d471f47050f95.js" defer></script>
 </body>
 </html>

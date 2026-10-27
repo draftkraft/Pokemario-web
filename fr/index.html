@@ -92,6 +92,7 @@
     .faq-list p { margin: 0; }
     .notice { padding: 16px 18px; border-left: 3px solid #a99bff; border-radius: 0 10px 10px 0; background: #ffffff08; font-size: .91rem; }
     .site-footer { padding: 28px 0 36px; border-top: 1px solid #ffffff18; color: #9b99b6; font-size: .84rem; }
+    .footer-summary { white-space: nowrap; overflow-x: auto; padding-block: 4px; }
     .analytics-consent { position: fixed; z-index: 20; inset: auto 16px 16px; max-width: 760px; margin-inline: auto; padding: 18px; border: 1px solid #ffffff35; border-radius: 14px; background: #17172bf5; box-shadow: 0 12px 40px #0009; color: #f3f1ff; }
     .analytics-consent p { margin: 0 0 12px; }
     .analytics-consent-actions { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -133,42 +134,6 @@
     .auth-submit:disabled { opacity: .6; cursor: default; }
     .auth-toggle { display: block; width: 100%; margin-top: 8px; padding: 0; border: 0; background: none; color: var(--violet); font: inherit; font-size: .8rem; cursor: pointer; text-align: center; }
     .auth-toggle:hover { text-decoration: underline; }
-    #groups-area { position: relative; }
-    .grp-toggle-btn { font-size: .82rem; }
-    .grp-panel { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: 320px; padding: 14px; border: 1px solid #ffffff30; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; }
-    .grp-panel-lb { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(420px, calc(100vw - 32px)); max-height: 80vh; overflow-y: auto; }
-    .grp-section { margin-bottom: 12px; }
-    .grp-section:last-child { margin-bottom: 0; }
-    .grp-section-title { margin-bottom: 6px; color: var(--gold); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-    .grp-label { display: block; margin-bottom: 4px; color: var(--muted); font-size: .78rem; }
-    .grp-select { width: 100%; padding: 6px 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #0e0f22; font: inherit; font-size: .85rem; }
-    .grp-row { display: flex; gap: 6px; }
-    .grp-input { flex: 1; padding: 7px 10px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #0e0f22; font: inherit; font-size: .85rem; text-transform: uppercase; }
-    .grp-input::placeholder { text-transform: none; }
-    .grp-input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
-    .grp-action-btn { white-space: nowrap; }
-    .grp-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid #ffffff10; }
-    .grp-item:last-child { border-bottom: 0; }
-    .grp-code { font: 700 .88rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--gold); letter-spacing: .06em; }
-    .grp-empty { margin: 4px 0; color: var(--muted); font-size: .82rem; }
-    .grp-error { margin-top: 6px; padding: 5px 8px; border-radius: 6px; background: #3d1525; color: #ffa4a4; font-size: .8rem; }
-    .grp-success { margin-top: 6px; padding: 5px 8px; border-radius: 6px; background: #152d15; color: #a4ffb4; font-size: .8rem; }
-    .grp-copy-btn { padding: 2px 8px; border: 1px solid #ffffff40; border-radius: 6px; background: transparent; color: inherit; font: inherit; font-size: .75rem; cursor: pointer; }
-    .grp-lb-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .grp-back-btn { padding: 4px 10px; border: 1px solid #ffffff40; border-radius: 6px; background: transparent; color: var(--ink); font: inherit; font-size: 1rem; cursor: pointer; }
-    .grp-lb-title { flex: 1; font-weight: 700; font-size: 1rem; }
-    .grp-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-    .grp-table th { padding: 4px 6px; color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; text-align: left; border-bottom: 1px solid #ffffff20; }
-    .grp-table td { padding: 6px; border-bottom: 1px solid #ffffff08; }
-    .grp-num { text-align: right; font-variant-numeric: tabular-nums; }
-    .grp-medal { font-size: 1.1rem; }
-    .grp-rank { color: var(--muted); font-size: .82rem; }
-    .grp-me td { background: #ffffff0c; font-weight: 600; }
-    .grp-stale td { opacity: .45; }
-    .grp-lb-actions { display: flex; gap: 8px; margin-top: 12px; }
-    .grp-share-btn { flex: 1; justify-content: center; }
-    .grp-leave-btn { color: #ffa4a4; border-color: #ffa4a440; }
-    .grp-leave-btn:hover { border-color: #ffa4a4; }
   </style>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
@@ -181,7 +146,6 @@
       <select id="language" aria-labelledby="language-label"><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="fr" selected>Français</option></select>
     </label>
     <div id="auth-area"></div>
-    <div id="groups-area"></div>
   </header>
   <main id="start-screen">
     <section class="hero shell" aria-labelledby="page-title">
@@ -272,11 +236,11 @@
       <p class="notice" data-i18n="web.fan">Poké-Mario est un projet de fans gratuit et non commercial, sans lien avec Nintendo, Game Freak ou The Pokémon Company. Pokémon et les noms associés sont des marques de leurs propriétaires respectifs.</p>
     </section>
   </main>
-  <footer class="site-footer"><nav class="shell language-links" aria-label="Langue" data-i18n-aria="ui.language"><a href="../en/" hreflang="en" lang="en" data-language="en">English</a> <a href="../es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="../de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="../ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="../fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell"><span data-i18n="web.footer">Poké-Mario · Plateforme gratuite de fans</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Paramètres d’analyse</button></div></footer>
+  <footer class="site-footer"><nav class="shell language-links" aria-label="Langue" data-i18n-aria="ui.language"><a href="../en/" hreflang="en" lang="en" data-language="en">English</a> <a href="../es/" hreflang="es" lang="es" data-language="es">Español</a> <a href="../de/" hreflang="de" lang="de" data-language="de">Deutsch</a> <a href="../ja/" hreflang="ja" lang="ja" data-language="ja">日本語</a> <a href="../fr/" hreflang="fr" lang="fr" data-language="fr">Français</a></nav><div class="shell footer-summary"><span data-i18n="web.footer">Poké-Mario · Plateforme gratuite de fans</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Paramètres d’analyse</button></div></footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Pouvons-nous utiliser Google Analytics pour mesurer les visites et comprendre l’utilisation de Poké-Mario ? Des données sont envoyées à Google. L’outil ne s’active qu’avec ton accord.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accepter</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Refuser</button></div>
   </aside>
-  <script src="../assets/site.73198ed4fb7b635c.js" defer></script>
+  <script src="../assets/site.c709cb9b1ef653ac.js" defer></script>
 </body>
 </html>

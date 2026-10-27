@@ -109,12 +109,22 @@
     @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
     @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .header-link { font-size: .8rem; } .language-control { margin-left: auto; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+    .auth-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); font: inherit; font-size: .82rem; cursor: pointer; white-space: nowrap; }
+    .auth-btn:hover { border-color: var(--gold); }
+    .auth-user { display: flex; align-items: center; gap: 8px; font-size: .82rem; }
+    .auth-avatar { border-radius: 50%; }
+    .auth-name { color: var(--muted); }
+    .auth-signout { font-size: .75rem; padding: 4px 8px; }
   </style>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <header class="site-header shell">
     <a class="wordmark" href="../" data-home aria-label="Accueil Poké-Mario" data-i18n-aria="web.home">Poké-Mario</a>
     <a class="header-link" href="#spielinfo" data-i18n="web.nav">Infos et commandes</a>
+    <div id="auth-area"></div>
     <label class="language-control"><span id="language-label" data-i18n="ui.language">Langue</span>
       <select id="language" aria-labelledby="language-label"><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="fr" selected>Français</option></select>
     </label>
@@ -213,6 +223,6 @@
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Pouvons-nous utiliser Google Analytics pour mesurer les visites et comprendre l’utilisation de Poké-Mario ? Des données sont envoyées à Google. L’outil ne s’active qu’avec ton accord.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accepter</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Refuser</button></div>
   </aside>
-  <script src="../assets/site.35aa67879b8aab77.js" defer></script>
+  <script src="../assets/site.c185ec4a7dc115df.js" defer></script>
 </body>
 </html>

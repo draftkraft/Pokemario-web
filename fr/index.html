@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Poké-Mario – Jeu Pokémon gratuit de plateforme</title>
-  <meta name="game-version" content="1.0.0+dff1f0ab">
+  <meta name="game-version" content="1.0.0+66d0d9f0">
   <meta name="description" content="Joue gratuitement à Poké-Mario, un jeu Pokémon de plateforme en ligne. Saute dans des niveaux pixel art, capture des Pokémon au tour par tour et rejoins les classements de groupe. Six profils locaux, sans téléchargement.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -121,7 +121,7 @@
     .auth-btn:hover { border-color: var(--gold); }
     .auth-user { display: flex; align-items: center; gap: 8px; font-size: .82rem; }
     .auth-avatar { border-radius: 50%; }
-    .auth-name { color: var(--muted); }
+    .auth-name { color: var(--muted); max-width: 16em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .auth-signout { font-size: .75rem; padding: 4px 8px; }
     .auth-edit-name { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: .9rem; padding: 2px 4px; }
     .auth-edit-name:hover, .auth-edit-name:focus-visible { color: inherit; }
@@ -255,12 +255,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Poké-Mario · Plateforme gratuite de fans</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Paramètres d’analyse</button></div>
-    <small class="shell game-version">v1.0.0+dff1f0ab</small>
+    <small class="shell game-version">v1.0.0+66d0d9f0</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Pouvons-nous utiliser Google Analytics pour mesurer les visites et comprendre l’utilisation de Poké-Mario ? Des données sont envoyées à Google. L’outil ne s’active qu’avec ton accord.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accepter</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Refuser</button></div>
   </aside>
-  <script src="../assets/site.cc3b50420800bfee.js" defer></script>
+  <script src="../assets/site.b0d86c1d7dd0ea18.js" defer></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Poké-Mario – Jogo Pokémon de plataforma grátis</title>
-  <meta name="game-version" content="1.0.0+7b46500f">
+  <meta name="game-version" content="1.0.0+61c4a451">
   <meta name="description" content="Jogue Poké-Mario, um jogo Pokémon de plataforma grátis. Pule por fases em pixel art, capture Pokémon em batalhas por turnos e participe de rankings de grupo. Seis perfis locais, sem download.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -123,6 +123,12 @@
     .auth-avatar { border-radius: 50%; }
     .auth-name { color: var(--muted); }
     .auth-signout { font-size: .75rem; padding: 4px 8px; }
+    .auth-edit-name { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: .9rem; padding: 2px 4px; }
+    .auth-edit-name:hover, .auth-edit-name:focus-visible { color: inherit; }
+    .auth-rename { display: flex; align-items: center; gap: 6px; }
+    .auth-rename[hidden], .auth-edit-name[hidden] { display: none; }
+    .auth-rename input { width: 9rem; padding: 4px 6px; border-radius: 6px; border: 1px solid #ffffff40; background: #ffffff14; color: inherit; font: inherit; }
+    .auth-rename .auth-btn { font-size: .75rem; padding: 4px 8px; }
     #auth-area { position: relative; }
     .auth-panel { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: 280px; padding: 16px; border: 1px solid #ffffff30; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; }
     .auth-google-btn { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 14px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #292842; font: inherit; font-size: .85rem; cursor: pointer; }
@@ -249,12 +255,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Poké-Mario · Jogo de plataforma gratuito de fãs</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Configurações de análise</button></div>
-    <small class="shell game-version">v1.0.0+7b46500f</small>
+    <small class="shell game-version">v1.0.0+61c4a451</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Podemos usar o Google Analytics para medir visitas e entender como o Poké-Mario é usado? Os dados são enviados ao Google. A análise só começa se você aceitar.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Aceitar análise</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Recusar</button></div>
   </aside>
-  <script src="../assets/site.7f481dbcab4b2e38.js" defer></script>
+  <script src="../assets/site.6719e3616e5a1a2a.js" defer></script>
 </body>
 </html>

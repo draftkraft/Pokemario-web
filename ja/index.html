@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Poké-Mario｜AI生成レベルが楽しめる無料ゲーム</title>
-  <meta name="game-version" content="1.1.2+5e99a902">
+  <meta name="game-version" content="1.1.1+e837eba5">
   <meta name="description" content="無料のポケモンブラウザーゲーム。ドット絵のステージを進み、ターン制バトルで捕獲。8ステージの後はAI生成レベルに挑戦。">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -114,6 +114,10 @@
     #hint { margin-top: 10px; padding: 0 8px; color: #ccc; font: 13px/1.8 "Courier New", monospace; }
     kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
     .game-loading { padding: 24px; color: #c8d2f0; }
+    .game-toolbar { width: min(800px, calc(100% - 16px)); display: flex; justify-content: flex-start; margin: 0 auto 8px; }
+    .game-home-link { display: inline-flex; align-items: center; min-height: 40px; padding: 7px 13px; border: 1px solid #77749c; border-radius: 9px; background: #292842; color: #f7f6ff; font-weight: 700; text-decoration: none; }
+    .game-home-link:hover { border-color: #ffd764; background: #373451; }
+    .game-home-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
     @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
     @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .header-link { font-size: .8rem; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
@@ -257,12 +261,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Poké-Mario · 無料のファン制作アクション</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">アクセス解析の設定</button></div>
-    <small class="shell game-version">v1.1.2+5e99a902</small>
+    <small class="shell game-version">v1.1.1+e837eba5</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Google Analyticsを使ってアクセスを測定し、Poké-Marioの利用状況を把握してもよいですか？データはGoogleに送信されます。同意した場合のみ解析を有効にします。</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">同意する</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">拒否する</button></div>
   </aside>
-  <script src="../assets/site.68eb880e263ea07f.js" defer></script>
+  <script src="../assets/site.7a840eef517c6484.js" defer></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Zappilon – Avventura platform gratuita con creature da catturare</title>
-  <meta name="game-version" content="1.3.3+4023930f">
+  <meta name="game-version" content="1.3.5+354ef5e2">
   <meta name="description" content="Esplora otto mondi in pixel art, scopri segreti, cattura Zappilon e crea la tua squadra. Gioca gratis nel browser e inventa nuovi livelli dopo la campagna.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -52,18 +52,20 @@
     .footer-language { display: flex; justify-content: center; margin-bottom: 14px; }
     html:is([lang="ja"], [lang="zh"]) h1 { max-width: none; font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
     html:is([lang="ja"], [lang="zh"]) .eyebrow { letter-spacing: .05em; }
-    .wordmark { color: var(--gold); font-size: 1.35rem; font-weight: 900; letter-spacing: -.04em; text-decoration: none; }
+    .brand-nav { display: flex; align-items: center; gap: 18px; }
+    .wordmark { display: inline-flex; align-items: center; gap: 9px; color: var(--gold); font-size: 1.35rem; font-weight: 900; letter-spacing: -.04em; text-decoration: none; white-space: nowrap; }
+    .brand-icon { display: block; width: 38px; height: 38px; object-fit: contain; }
     .header-link { color: var(--muted); font-size: .95rem; text-decoration-thickness: 1px; text-underline-offset: 4px; }
     .hero { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(28px, 5vw, 68px); padding-block: clamp(38px, 6vw, 68px) 62px; }
     .eyebrow { margin: 0 0 16px; color: var(--violet); font-size: .78rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { max-width: 14ch; margin: 0; font-size: clamp(2.55rem, 5vw, 4rem); line-height: 1.03; letter-spacing: -.065em; }
+    h1 { max-width: 14ch; margin: 0; font-size: clamp(2.3rem, 4.35vw, 3.5rem); line-height: 1.07; letter-spacing: -.06em; }
     h1 span { color: var(--gold); }
-    .hero-copy > p:not(.eyebrow) { max-width: 56ch; margin: 22px 0 0; color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.13rem); }
+    .hero-copy > p:not(.eyebrow) { max-width: 56ch; margin: 18px 0 0; color: var(--muted); font-size: clamp(.98rem, 1.45vw, 1.06rem); }
     .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
     .play-button { min-height: 56px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border: 2px solid #ffe995; border-radius: 12px; background: linear-gradient(180deg, #ffe78e, #ffc642); color: #211a37; font: 850 1.08rem system-ui, sans-serif; text-decoration: none; cursor: pointer; box-shadow: 0 5px 0 #a75e25, 0 12px 28px #ffcf4b2e; transition: transform .15s ease, filter .15s ease; }
     .play-button:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .play-button:active { transform: translateY(2px); box-shadow: 0 2px 0 #a75e25; }
-    .header-play { min-height: 46px; padding: 9px 16px; font-size: .95rem; white-space: nowrap; }
+    .header-play { min-height: 0; padding: 4px 8px; border-width: 1px; border-radius: 8px; font-size: .75rem; box-shadow: none; white-space: nowrap; }
     .play-button:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
     .play-note { color: #a6a4c3; font-size: .88rem; }
     .feature-pills { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
@@ -117,13 +119,13 @@
     kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
     .game-loading { padding: 24px; color: #c8d2f0; }
     @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
-    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 62px; padding: 9px 14px; gap: 8px 12px; } .wordmark { font-size: 1.15rem; } .header-link { font-size: .78rem; } .header-play { min-height: 40px; padding: 7px 11px; font-size: .82rem; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
+    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 62px; padding: 9px 14px; gap: 8px 12px; } .brand-nav { gap: 10px; } .wordmark { gap: 6px; font-size: 1.05rem; } .brand-icon { width: 30px; height: 30px; } .header-link { font-size: .78rem; } .header-play { padding: 4px 8px; font-size: .75rem; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     .auth-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); font: inherit; font-size: .82rem; cursor: pointer; white-space: nowrap; }
     .auth-btn:hover { border-color: var(--gold); }
     .auth-user { display: flex; align-items: center; gap: 8px; font-size: .82rem; }
     .auth-avatar { border-radius: 50%; }
-    .auth-tester { cursor: help; font-size: .95rem; }
+    .auth-tester { padding: 2px; border: 0; background: none; color: inherit; cursor: pointer; font-size: 1rem; line-height: 1; }
     .auth-tester[hidden] { display: none; }
     .auth-name { color: var(--muted); max-width: 16em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .auth-signout { font-size: .75rem; padding: 4px 8px; }
@@ -134,8 +136,9 @@
     .auth-rename input { width: 9rem; padding: 4px 6px; border-radius: 6px; border: 1px solid #ffffff40; background: #ffffff14; color: inherit; font: inherit; }
     .auth-rename .auth-btn { font-size: .75rem; padding: 4px 8px; }
     #auth-area { position: relative; }
-    .website-test-tools { position: absolute; top: calc(100% + 8px); right: 0; z-index: 31; width: min(360px, calc(100vw - 32px)); max-height: min(75vh, 640px); overflow: auto; padding: 10px 14px; border: 1px solid #9b8de0; border-radius: 10px; background: var(--panel); box-shadow: 0 12px 36px #0008; color: var(--ink); font-size: .8rem; text-align: left; }
-    .website-test-tools summary { color: var(--gold); font-weight: 700; cursor: pointer; }
+    .website-test-tools { position: fixed; z-index: 60; width: min(720px, calc(100vw - 32px)); max-height: min(82vh, 760px); overflow: auto; padding: 16px 20px; border: 1px solid #9b8de0; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; color: var(--ink); font-size: .95rem; text-align: left; }
+    .website-test-tools[hidden] { display: none; }
+    .website-test-tools h2 { margin: 0; padding: 0 0 12px; border-bottom: 1px solid #ffffff20; color: var(--gold); font-size: 1.1rem; }
     .test-tool-block { display: grid; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #ffffff20; }
     .test-tool-block select, .test-tool-block input[type="range"] { width: 100%; accent-color: var(--gold); }
     .test-tool-block select { padding: 6px; border: 1px solid #7d789b; border-radius: 6px; color: var(--ink); background: #17172b; font: inherit; }
@@ -168,9 +171,11 @@
 </head>
 <body>
   <header class="site-header shell">
-    <a class="wordmark" href="../" data-home aria-label="Home di Zappilon" data-i18n-aria="web.home">Zappilon</a>
-    <a class="header-link" href="./levels/" data-levels data-i18n="web.gallery">Level-Galerie</a>
-    <button class="play-button header-play" id="start" type="button" data-i18n="web.play"><span aria-hidden="true">▶</span> Gioca gratis ora</button>
+    <nav class="brand-nav" aria-label="Zappilon">
+      <a class="wordmark" href="../" data-home aria-label="Home di Zappilon" data-i18n-aria="web.home"><img class="brand-icon" src="../favicon.svg" alt="" width="38" height="38"><span>Zappilon</span></a>
+      <a class="header-link" href="./levels/" data-levels data-i18n="web.gallery">Level-Galerie</a>
+    </nav>
+    <button class="play-button header-play" id="start" type="button" data-i18n="web.play">Gioca</button>
     <div id="auth-area"></div>
   </header>
   <main id="start-screen">
@@ -180,6 +185,7 @@
         <h1 id="page-title" data-i18n="web.heading">Entra nel mondo di Zappilon <span>e vivi un’avventura tutta tua</span></h1>
         <p data-i18n="web.intro">Esplora mondi in pixel art, scopri passaggi segreti, cattura Zappilon e crea la tua squadra. Dopo il finale ti aspettano nuovi livelli.</p>
         <div class="hero-actions">
+          <button class="play-button" id="start-hero" type="button" data-i18n="web.playHero"><span aria-hidden="true">▶</span> Gioca gratis ora</button>
           <span class="play-note" data-i18n="web.note">Due difficoltà · Salvataggio nel browser</span>
         </div>
         <div id="loading" role="status" aria-live="polite"></div>
@@ -273,12 +279,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Zappilon · Platform gratuito</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Impostazioni di analisi</button> · <a href="../privacy/" data-i18n="web.privacy">Privacy</a> · <a href="../terms/" data-i18n="web.terms">Termini</a></div>
-    <small class="shell game-version">v1.3.3+4023930f</small>
+    <small class="shell game-version">v1.3.5+354ef5e2</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Possiamo usare Google Analytics per misurare le visite e capire come viene usato Zappilon? I dati vengono inviati a Google. L’analisi parte solo se accetti.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accetta l'analisi</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Rifiuta</button></div>
   </aside>
-  <script src="../assets/site.fccdcdac22add254.js" defer></script>
+  <script src="../assets/site.622b3618c2a90fd5.js" defer></script>
 </body>
 </html>

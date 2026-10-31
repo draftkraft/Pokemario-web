@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Zappilon – Kostenloses Creature-Catching-Jump’n’Run</title>
-  <meta name="game-version" content="1.3.8+80771877">
+  <meta name="game-version" content="1.3.9+80771877">
   <meta name="description" content="Erkunde acht handgebaute Pixelwelten, entdecke Geheimnisse, fange Zappilon und stelle dein Team zusammen. Spiele Zappilon kostenlos im Browser und erschaffe nach dem Finale neue Level nach deinen Ideen.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -45,9 +45,9 @@
     a { color: inherit; }
     .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
     .site-header { position: sticky; top: 0; z-index: 100; width: 100%; max-width: none; min-height: 82px; margin: 0; padding: 12px max(20px, calc((100% - 1160px) / 2)); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; border-bottom: 1px solid #ffffff18; background: rgba(17, 19, 41, .96); box-shadow: 0 8px 28px #07081255; backdrop-filter: blur(14px); }
-    body.playing .site-header { display: none; }
     .language-control { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
     select { font: inherit; padding: 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); }
+    #language { padding-right: 30px; }
     select:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .footer-language { display: flex; justify-content: center; margin-bottom: 14px; }
     html:is([lang="ja"], [lang="zh"]) h1 { max-width: none; font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
@@ -140,7 +140,7 @@
     .auth-rename[hidden], .auth-edit-name[hidden] { display: none; }
     .auth-rename input { width: 9rem; padding: 4px 6px; border-radius: 6px; border: 1px solid #ffffff40; background: #ffffff14; color: inherit; font: inherit; }
     .auth-rename .auth-btn { font-size: .75rem; padding: 4px 8px; }
-    #header-play-slot { display: contents; }
+    #header-play-slot { display: flex; align-items: center; margin-left: auto; }
     #auth-area { position: relative; }
     .website-test-tools { position: fixed; z-index: 60; width: min(720px, calc(100vw - 32px)); max-height: min(82vh, 760px); overflow: auto; padding: 16px 20px; border: 1px solid #9b8de0; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; color: var(--ink); font-size: .95rem; text-align: left; }
     .website-test-tools[hidden] { display: none; }
@@ -293,7 +293,7 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Zappilon · Kostenloses Jump’n’Run</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Analyse-Einstellungen</button> · <a href="../privacy/" data-i18n="web.privacy">Datenschutz</a> · <a href="../terms/" data-i18n="web.terms">Nutzungsbedingungen</a></div>
-    <small class="shell game-version">v1.3.8+80771877</small>
+    <small class="shell game-version">v1.3.9+80771877</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Dürfen wir Google Analytics verwenden, um Besuche zu messen und zu verstehen, wie Zappilon genutzt wird? Dabei werden Daten an Google gesendet. Die Analyse wird erst nach deiner Zustimmung aktiviert.</p>

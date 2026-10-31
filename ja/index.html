@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>ザッピロン｜無料で遊べる生き物収集アクション</title>
-  <meta name="game-version" content="1.3.5+354ef5e2">
+  <meta name="game-version" content="1.3.8+80771877">
   <meta name="description" content="手作りのドット絵世界を8つ冒険し、秘密を見つけ、ザッピロンを捕まえてチームを作ろう。ブラウザーで無料プレイ。クリア後は自分のアイデアで新しいステージへ。">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -125,7 +125,12 @@
     .auth-btn:hover { border-color: var(--gold); }
     .auth-user { display: flex; align-items: center; gap: 8px; font-size: .82rem; }
     .auth-avatar { border-radius: 50%; }
-    .auth-tester { padding: 2px; border: 0; background: none; color: inherit; cursor: pointer; font-size: 1rem; line-height: 1; }
+    .auth-tester { padding: 2px; border: 0; background: none; color: inherit; cursor: pointer; line-height: 1; }
+    .auth-tester svg { display: block; width: 23px; height: 23px; overflow: visible; }
+    .auth-tester svg > circle { fill: #55ee8d; filter: drop-shadow(0 0 2px #55ee8d80); }
+    .auth-tester .flask-outline { fill: none; stroke: #d9d5f2; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .auth-tester .flask-liquid { fill: #37ce78; }
+    .auth-tester .flask-bubble { fill: #b1ffcb; }
     .auth-tester[hidden] { display: none; }
     .auth-name { color: var(--muted); max-width: 16em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .auth-signout { font-size: .75rem; padding: 4px 8px; }
@@ -135,10 +140,19 @@
     .auth-rename[hidden], .auth-edit-name[hidden] { display: none; }
     .auth-rename input { width: 9rem; padding: 4px 6px; border-radius: 6px; border: 1px solid #ffffff40; background: #ffffff14; color: inherit; font: inherit; }
     .auth-rename .auth-btn { font-size: .75rem; padding: 4px 8px; }
+    #header-play-slot { display: contents; }
     #auth-area { position: relative; }
     .website-test-tools { position: fixed; z-index: 60; width: min(720px, calc(100vw - 32px)); max-height: min(82vh, 760px); overflow: auto; padding: 16px 20px; border: 1px solid #9b8de0; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; color: var(--ink); font-size: .95rem; text-align: left; }
     .website-test-tools[hidden] { display: none; }
-    .website-test-tools h2 { margin: 0; padding: 0 0 12px; border-bottom: 1px solid #ffffff20; color: var(--gold); font-size: 1.1rem; }
+    .test-tools-heading { position: sticky; top: -16px; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: -16px -20px 0; padding: 14px 20px 12px; border-bottom: 1px solid #ffffff20; background: var(--panel); }
+    .website-test-tools h2 { display: flex; align-items: center; gap: 9px; margin: 0; color: var(--gold); font-size: 1.1rem; }
+    .test-flask { width: 24px; height: 24px; overflow: visible; }
+    .test-flask > circle { fill: #55ee8d; filter: drop-shadow(0 0 2px #55ee8d80); }
+    .test-flask .flask-outline { fill: none; stroke: #d9d5f2; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .test-flask .flask-liquid { fill: #37ce78; }
+    .test-flask .flask-bubble { fill: #b1ffcb; }
+    .test-tools-close { display: inline-grid; width: 36px; height: 36px; place-items: center; border: 1px solid #7d789b; border-radius: 8px; background: #292842; color: var(--ink); font: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+    .test-tools-close:hover { border-color: var(--gold); }
     .test-tool-block { display: grid; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #ffffff20; }
     .test-tool-block select, .test-tool-block input[type="range"] { width: 100%; accent-color: var(--gold); }
     .test-tool-block select { padding: 6px; border: 1px solid #7d789b; border-radius: 6px; color: var(--ink); background: #17172b; font: inherit; }
@@ -175,7 +189,7 @@
       <a class="wordmark" href="../" data-home aria-label="ザッピロン ホーム" data-i18n-aria="web.home"><img class="brand-icon" src="../favicon.svg" alt="" width="38" height="38"><span>Zappilon</span></a>
       <a class="header-link" href="./levels/" data-levels data-i18n="web.gallery">Level-Galerie</a>
     </nav>
-    <button class="play-button header-play" id="start" type="button" data-i18n="web.play">プレイ</button>
+    <span id="header-play-slot"><button class="play-button header-play" id="start" type="button" data-i18n="web.play">プレイ</button></span>
     <div id="auth-area"></div>
   </header>
   <main id="start-screen">
@@ -279,12 +293,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">ザッピロン · 無料アクションゲーム</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">アクセス解析の設定</button> · <a href="../privacy/" data-i18n="web.privacy">プライバシー</a> · <a href="../terms/" data-i18n="web.terms">利用規約</a></div>
-    <small class="shell game-version">v1.3.5+354ef5e2</small>
+    <small class="shell game-version">v1.3.8+80771877</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">Google Analyticsを使ってアクセスを測定し、ザッピロンの利用状況を把握してもよいですか？データはGoogleに送信されます。同意した場合のみ解析を有効にします。</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">同意する</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">拒否する</button></div>
   </aside>
-  <script src="../assets/site.622b3618c2a90fd5.js" defer></script>
+  <script src="../assets/site.fb77decf84f61ea0.js" defer></script>
 </body>
 </html>

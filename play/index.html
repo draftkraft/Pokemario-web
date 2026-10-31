@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Zappilon – Free Creature-Catching Platform Adventure</title>
-  <meta name="game-version" content="1.3.9+80771877">
+  <meta name="game-version" content="1.3.10+80771877">
   <meta name="description" content="Explore eight handcrafted pixel worlds, uncover secrets, catch Zappilon, and build your team. Play this free browser adventure and shape new levels with your own ideas after the finale.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="noindex, follow">
@@ -107,6 +107,7 @@
     body.playing { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: safe center; padding: 8px 0; background: #1a1a2e; }
     #game-screen { width: 100%; text-align: center; }
     #game-screen canvas { display: block; width: 800px; max-width: 100vw; height: auto; aspect-ratio: 800 / 480; margin: 0 auto; border: 4px solid #222; background: #5c94fc; box-shadow: 0 0 30px #0009; }
+    body.playing #game-screen canvas:focus, body.playing #header-play-slot .header-play:focus { outline: none; }
     #hint { margin-top: 10px; padding: 0 8px; color: #ccc; font: 13px/1.8 "Courier New", monospace; }
     kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
     .game-loading { padding: 24px; color: #c8d2f0; }
@@ -285,12 +286,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Zappilon · Free platform game</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Analytics settings</button> · <a href="../privacy/" data-i18n="web.privacy">Privacy</a> · <a href="../terms/" data-i18n="web.terms">Terms</a></div>
-    <small class="shell game-version">v1.3.9+80771877</small>
+    <small class="shell game-version">v1.3.10+80771877</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">May we use Google Analytics to measure visits and understand how Zappilon is used? Data is sent to Google. Analytics starts only if you accept.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accept analytics</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Reject</button></div>
   </aside>
-  <script src="../assets/site.fb77decf84f61ea0.js" defer></script>
+  <script src="../assets/site.a3321001a269d6ed.js" defer></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111329">
   <title>Zappilon – Free Creature-Catching Platform Adventure</title>
-  <meta name="game-version" content="1.3.1+7b474df2">
+  <meta name="game-version" content="1.3.3+4023930f">
   <meta name="description" content="Explore eight handcrafted pixel worlds, uncover secrets, catch Zappilon, and build your team. Play this free browser adventure and shape new levels with your own ideas after the finale.">
   <meta name="google-site-verification" content="40uz45-wgnE26kJ9-hqYH9SHQf2S0QuxNMxT_qof0_k">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -44,8 +44,8 @@
     body { min-width: 320px; min-height: 100vh; margin: 0; background: radial-gradient(ellipse at 82% 10%, #292255 0, #111329 44rem); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     a { color: inherit; }
     .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
-    .site-header { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ffffff18; }
-    .site-header { flex-wrap: wrap; padding-block: 14px; gap: 14px; }
+    .site-header { position: sticky; top: 0; z-index: 100; width: 100%; max-width: none; min-height: 82px; margin: 0; padding: 12px max(20px, calc((100% - 1160px) / 2)); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; border-bottom: 1px solid #ffffff18; background: rgba(17, 19, 41, .96); box-shadow: 0 8px 28px #07081255; backdrop-filter: blur(14px); }
+    body.playing .site-header { display: none; }
     .language-control { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
     select { font: inherit; padding: 8px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); }
     select:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
@@ -63,6 +63,7 @@
     .play-button { min-height: 56px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border: 2px solid #ffe995; border-radius: 12px; background: linear-gradient(180deg, #ffe78e, #ffc642); color: #211a37; font: 850 1.08rem system-ui, sans-serif; text-decoration: none; cursor: pointer; box-shadow: 0 5px 0 #a75e25, 0 12px 28px #ffcf4b2e; transition: transform .15s ease, filter .15s ease; }
     .play-button:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .play-button:active { transform: translateY(2px); box-shadow: 0 2px 0 #a75e25; }
+    .header-play { min-height: 46px; padding: 9px 16px; font-size: .95rem; white-space: nowrap; }
     .play-button:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
     .play-note { color: #a6a4c3; font-size: .88rem; }
     .feature-pills { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
@@ -116,7 +117,7 @@
     kbd { padding: 2px 6px; border: 1px solid #555; border-radius: 4px; background: #333; }
     .game-loading { padding: 24px; color: #c8d2f0; }
     @media (max-width: 820px) { .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 54px; } h1 { max-width: 14ch; } .preview { max-width: 680px; } }
-    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 68px; } .header-link { font-size: .8rem; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
+    @media (max-width: 600px) { .shell { width: min(100% - 28px, 520px); } .site-header { min-height: 62px; padding: 9px 14px; gap: 8px 12px; } .wordmark { font-size: 1.15rem; } .header-link { font-size: .78rem; } .header-play { min-height: 40px; padding: 7px 11px; font-size: .82rem; } .hero { padding-block: 42px 48px; } .feature-grid { grid-template-columns: 1fr; } .feature-card { min-height: 0; } .scene-caption { font-size: .7rem; } .play-note { flex-basis: 100%; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     .auth-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: var(--panel); font: inherit; font-size: .82rem; cursor: pointer; white-space: nowrap; }
     .auth-btn:hover { border-color: var(--gold); }
@@ -133,6 +134,17 @@
     .auth-rename input { width: 9rem; padding: 4px 6px; border-radius: 6px; border: 1px solid #ffffff40; background: #ffffff14; color: inherit; font: inherit; }
     .auth-rename .auth-btn { font-size: .75rem; padding: 4px 8px; }
     #auth-area { position: relative; }
+    .website-test-tools { position: absolute; top: calc(100% + 8px); right: 0; z-index: 31; width: min(360px, calc(100vw - 32px)); max-height: min(75vh, 640px); overflow: auto; padding: 10px 14px; border: 1px solid #9b8de0; border-radius: 10px; background: var(--panel); box-shadow: 0 12px 36px #0008; color: var(--ink); font-size: .8rem; text-align: left; }
+    .website-test-tools summary { color: var(--gold); font-weight: 700; cursor: pointer; }
+    .test-tool-block { display: grid; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #ffffff20; }
+    .test-tool-block select, .test-tool-block input[type="range"] { width: 100%; accent-color: var(--gold); }
+    .test-tool-block select { padding: 6px; border: 1px solid #7d789b; border-radius: 6px; color: var(--ink); background: #17172b; font: inherit; }
+    .test-time-row, .test-actions { display: flex; align-items: center; gap: 8px; }
+    .test-time-row output { min-width: 3.2em; font-variant-numeric: tabular-nums; }
+    .test-time-row input { flex: 1; }
+    .test-actions { flex-wrap: wrap; }
+    .test-actions button:disabled { opacity: .5; cursor: default; }
+    #test-tools-status { margin: 8px 0 0; color: var(--muted); }
     .auth-panel { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: 280px; padding: 16px; border: 1px solid #ffffff30; border-radius: 12px; background: var(--panel); box-shadow: 0 12px 36px #0008; }
     .auth-google-btn { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 14px; border: 1px solid #7d789b; border-radius: 8px; color: var(--ink); background: #292842; font: inherit; font-size: .85rem; cursor: pointer; }
     .auth-google-btn:hover { border-color: var(--gold); }
@@ -158,6 +170,7 @@
   <header class="site-header shell">
     <a class="wordmark" href="./" data-home aria-label="Zappilon home" data-i18n-aria="web.home">Zappilon</a>
     <a class="header-link" href="./levels/" data-levels data-i18n="web.gallery">Level-Galerie</a>
+    <button class="play-button header-play" id="start" type="button" data-i18n="web.play"><span aria-hidden="true">▶</span> Play free now</button>
     <div id="auth-area"></div>
   </header>
   <main id="start-screen">
@@ -165,9 +178,8 @@
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="web.eyebrow">Zappilon · Free browser platformer</p>
         <h1 id="page-title" data-i18n="web.heading">Jump into a world of Zappilon <span>and make every adventure your own</span></h1>
-        <p data-i18n="web.intro">Explore eight handcrafted pixel levels, uncover secret routes, and catch Zappilon in turn-based battles. Build your team and keep the adventure going after the finale with surprise levels and worlds shaped by your ideas.</p>
+        <p data-i18n="web.intro">Explore pixel worlds, find secret routes, catch Zappilon, and build your team. New levels await after the finale.</p>
         <div class="hero-actions">
-          <button class="play-button" id="start" type="button" data-i18n="web.play"><span aria-hidden="true">▶</span> Play free now</button>
           <span class="play-note" data-i18n="web.note">Two difficulties · Saved in your browser</span>
         </div>
         <div id="loading" role="status" aria-live="polite"></div>
@@ -261,12 +273,12 @@
       </label>
     </div>
     <div class="shell footer-summary"><span data-i18n="web.footer">Zappilon · Free platform game</span> · <button class="analytics-settings" id="analytics-settings" type="button" data-i18n="web.analyticsSettings">Analytics settings</button> · <a href="./privacy/" data-i18n="web.privacy">Privacy</a> · <a href="./terms/" data-i18n="web.terms">Terms</a></div>
-    <small class="shell game-version">v1.3.1+7b474df2</small>
+    <small class="shell game-version">v1.3.3+4023930f</small>
   </footer>
   <aside class="analytics-consent" id="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title" hidden>
     <p id="analytics-consent-title" data-i18n="web.analyticsConsent">May we use Google Analytics to measure visits and understand how Zappilon is used? Data is sent to Google. Analytics starts only if you accept.</p>
     <div class="analytics-consent-actions"><button id="analytics-accept" type="button" data-i18n="web.analyticsAccept">Accept analytics</button><button id="analytics-reject" type="button" data-i18n="web.analyticsReject">Reject</button></div>
   </aside>
-  <script src="./assets/site.ce691f1a0a4beec3.js" defer></script>
+  <script src="./assets/site.fccdcdac22add254.js" defer></script>
 </body>
 </html>
